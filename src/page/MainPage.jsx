@@ -10,9 +10,7 @@ const MainPage = () => {
   const dispatch = useDispatch();
   const fetchData = async () => {
     try {
-      const API_URL =
-        "https://cors-anywhere.herokuapp.com/https://api.jsonserve.com/Uw5CrX";
-
+      const API_URL = "https://corsproxy.io/?https://api.jsonserve.com/Uw5CrX"; // New proxy
       const response = await axios.get(API_URL);
       dispatch(allData(response.data));
     } catch (error) {
@@ -20,6 +18,7 @@ const MainPage = () => {
       console.error("Fetch Error:", error);
     }
   };
+  
   useEffect(() => {
     fetchData();
   }, []);
