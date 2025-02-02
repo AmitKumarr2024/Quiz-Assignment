@@ -22,7 +22,7 @@ The **Quiz App** is an interactive web application that allows users to take qui
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/quiz-app.git
+   git clone https://github.com/AmitKumarr2024/Quiz-Assignment.git
    cd quiz-app
    ```
 2. Install dependencies:
@@ -67,7 +67,7 @@ If needed, modify the Redux store in `quizSlice.js` to update questions or scori
 - 🎨 Improve **UI animations**.
 
 ## 👨‍💻 Author
-- **Amit Kumar** - [GitHub](https://github.com/your-username)
+- **Amit Kumar** - [GitHub](https://github.com/AmitKumarr2024/Quiz-Assignment)
 
 ## 📜 License
 This project is licensed under the MIT License.
