@@ -8,11 +8,16 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      "/api": {
-        target: "https://api.jsonserve.com",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""), // Remove /api prefix
+      '/api': {
+        target: 'https://api.jsonserve.com/Uw5CrX', 
+        changeOrigin: true, 
+        secure: false, 
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        headers: {
+          'User-Agent': 'quizinst' // Add a custom User-Agent header if needed
+        }
       },
     },
   },
 });
+
