@@ -10,12 +10,13 @@ const MainPage = () => {
   const dispatch = useDispatch();
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://api.jsonserve.com/Uw5CrX");
-      const dataResponse = response;
-      console.log("dataResponse", dataResponse.data);
-      dispatch(allData(dataResponse.data));
+      const API_URL = "https://corsproxy.io/?https://api.jsonserve.com/Uw5CrX";
+
+      const response = await axios.get(API_URL);
+      dispatch(allData(response.data));
     } catch (error) {
-      toast.error(error.message);
+      toast.error("Failed to fetch data. Try again later!");
+      console.error("Fetch Error:", error);
     }
   };
   useEffect(() => {
@@ -26,7 +27,6 @@ const MainPage = () => {
       <div className="bg-slate-200 h-full flex flex-wrap md:h-screen justify-center gap-6">
         <SideProfileBar />
         <QuizBox />
-      
       </div>
     </>
   );
