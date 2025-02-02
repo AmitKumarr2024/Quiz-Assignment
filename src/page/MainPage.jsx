@@ -10,7 +10,7 @@ const MainPage = () => {
   const dispatch = useDispatch();
   const fetchData = async () => {
     try {
-      const response = await axios.get("/api");
+      const response = await axios.get("https://api.jsonserve.com/Uw5CrX");
       const dataResponse = response;
       console.log("dataResponse", dataResponse.data);
       dispatch(allData(dataResponse.data));
