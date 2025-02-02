@@ -6,6 +6,13 @@ import tailwindcss from "@tailwindcss/vite";
 // vite.config.js
 export default defineConfig({
   plugins: [react(), tailwindcss()],
- 
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://api.jsonserve.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""), // Remove /api prefix
+      },
+    },
+  },
 });
-
