@@ -11,7 +11,7 @@ const MainPage = () => {
   const fetchData = async () => {
     try {
       // Using a new CORS proxy
-      const API_URL = "https://thingproxy.freeboard.io/fetch/https://api.jsonserve.com/Uw5CrX";
+      const API_URL = "/api"; 
       const response = await axios.get(API_URL);
       dispatch(allData(response.data));
     } catch (error) {
