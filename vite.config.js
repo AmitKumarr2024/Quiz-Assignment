@@ -3,17 +3,21 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
+// vite.config.js
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
       '/api': {
-        target: 'https://api.jsonserve.com/Uw5CrX',
-     
-        changeOrigin: true,
-        secure: false,
+        target: 'https://api.jsonserve.com/Uw5CrX', 
+        changeOrigin: true, 
+        secure: false, 
         rewrite: (path) => path.replace(/^\/api/, ''),
+        headers: {
+          'User-Agent': 'quizinst' // Add a custom User-Agent header if needed
+        }
       },
     },
   },
 });
+
